@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="customer-detail">
+        <h3>Customer Details</h3>
+        <p><strong>Name:</strong> {{ record.first_name }} {{ record.last_name }}</p>
+        <p><strong>Email:</strong> {{ record.email }}</p>
+        <p><strong>Phone:</strong> {{ record.phone }}</p>
+        <p><strong>Address:</strong> {{ record.address }}</p>
+        <p><strong>City:</strong> {{ record.city }}</p>
+        <p><strong>State:</strong> {{ record.state }}</p>
+        <p><strong>Pincode:</strong> {{ record.pincode }}</p>
+
+        <div class="action-buttons">
+            <a href="{% url 'dashboard' %}">Back</a>
+            <a href="{% url 'delete' record.id %}">Delete</a>
+        </div>
+    </div>
+{% endblock %}

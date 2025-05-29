@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="table-container">
+        <h3>Customer List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Pincode</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in customers %}
+                    <tr>
+                        <td><a href="{% url 'customer' x.id %}">{{ x.id }}</a></td>
+                        <td>{{ x.first_name }} {{ x.last_name }}</td>
+                        <td>{{ x.email }}</td>
+                        <td>{{ x.phone }}</td>
+                        <td>{{ x.address }}</td>
+                        <td>{{ x.city }}</td>
+                        <td>{{ x.state }}</td>
+                        <td>{{ x.pincode }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{% url 'new' %}" class="fab">+</a>
+{% endblock %}
