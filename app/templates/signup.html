@@ -24,6 +24,9 @@
         <label for="password2">Confirm Password:</label>
         <input type="password" id="password2" name="password2" placeholder="********" required>
 
-        <button type="submit">Sign Up</button>
+        <div class="action-buttons">
+            <a href="{% url 'dashboard' %}">Back</a>
+            <button type="submit">Sign Up</button>
+        </div>
     </form>
 {% endblock %}

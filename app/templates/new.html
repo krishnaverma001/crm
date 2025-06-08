@@ -28,7 +28,9 @@
 
         <label>Pincode:</label>
         {{ form.pincode }}
-
-        <button type="submit">Add Customer</button>
+        <div class="action-buttons">
+            <a href="{% url 'dashboard' %}">Back</a>
+            <button type="submit" name="action" value="submit">Add Customer</button>
+        </div>
     </form>
 {% endblock %}

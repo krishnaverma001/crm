@@ -20,11 +20,11 @@
         <a href="{% url 'index' %}">CRM</a>
         <div>
             {% if user.is_authenticated and user.is_active %}
-                <a href="{% url 'logout' %}">Logout</a>
+                <a class="nav-auth" href="{% url 'logout' %}">Logout</a>
 
             {% else %}
-                <a href="{% url 'signup' %}">Sign Up</a>
-                <a href="{% url 'index' %}">Login</a>
+                <a class="nav-auth" href="{% url 'signup' %}">Sign Up</a>
+                <a class="nav-auth" href="{% url 'index' %}">Login</a>
             {% endif %}
         </div>
     </nav>

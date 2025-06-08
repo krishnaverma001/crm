@@ -101,6 +101,11 @@ def new_customer(request):
         return redirect('index')
 
     if request.method == 'POST':
+        action = request.POST.get('action')
+
+        if action == 'back':
+            return redirect('dashboard')
+
         form = CustomerForm(request.POST)
         if form.is_valid():
             form.save()
